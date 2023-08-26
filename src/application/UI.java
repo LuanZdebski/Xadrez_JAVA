@@ -1,6 +1,10 @@
 package application;
 
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
 import chess.ChessPiece;
+import chess.ChessPosition;
 import chess.Color;
 
 public class UI {
@@ -25,6 +29,20 @@ public class UI {
 	public static final String ANSI_CYAN_BACKGROUND = "\u001B[46m";
 	public static final String ANSI_WHITE_BACKGROUND = "\u001B[47m";
 	
+	public static ChessPosition readChessPosition(Scanner sc)
+	{
+		try 
+		{
+			String entry = sc.nextLine();
+			char column = entry.charAt(0);
+			int row = Integer.parseInt(entry.substring(1));
+			return new ChessPosition(column, row);
+		} catch (RuntimeException e) 
+		{
+			throw new InputMismatchException("Erro lendo posição");
+		}
+
+	}
 	
 	public static void printBoard(ChessPiece[][] pieces)
 	{
