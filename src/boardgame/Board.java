@@ -12,7 +12,7 @@ public class Board {
 		this.columns = columns;
 		pieces = new Piece[rows][columns];
 	}
-	
+	//methods
 	public Piece piece(int row, int column)
 	{
 		return pieces[row][column];
@@ -21,7 +21,13 @@ public class Board {
 	{
 		return pieces[pos.getRow()][pos.getColumn()];
 	}
-
+	public void placePiece(Piece piece, Position pos)
+	{
+		pieces[pos.getRow()][pos.getColumn()] = piece;
+		piece.position = pos;
+	}
+	
+	//getters and setters
 	public int getRows() {
 		return rows;
 	}
