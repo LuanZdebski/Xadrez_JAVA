@@ -47,6 +47,8 @@ public class ChessMatch {
 	private void validateSourcePosition(Position pos)
 	{
 		if(!board.thereIsAPiece(pos) ) {throw new ChessException("Não ah nenhuma peça na posição fornecida");}
+		if(board.piece(pos).isThereAnyPossibleMove()) {throw new ChessException("Sem movimentos possiveis para essa peça");}}
+			
 		
 	}
 	private void placeNewPiece(char column, int row, ChessPiece piece) 

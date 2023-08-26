@@ -15,7 +15,11 @@ public class Tower extends ChessPiece{
 	{
 		return "T";
 	}
-	
+	@Override
+	public boolean[][] possibleMoves() {
+		boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
+		return mat;
+	}
 	
 	
 }
