@@ -63,12 +63,23 @@ public class UI {
 		printCapturedPieces(captured);
 		System.out.println();
 		System.out.println("Turno : " + chessMatch.getTurn());
-		String color = (chessMatch.getcurrentPlayer() == Color.WHITE) ? "brancas" : "pretas";
-		System.out.println("Vez das peças " + color);
-		if(chessMatch.getCheck())
+		
+		if(!chessMatch.getCheckMate())
 		{
-			System.out.println("CHECK!");
+			String color = (chessMatch.getcurrentPlayer() == Color.WHITE) ? "brancas" : "pretas";	
+			System.out.println("Vez das peças " + color);
+			if(chessMatch.getCheck())
+			{
+				System.out.println("CHECK!");
+			}
 		}
+		else
+		{
+			String color = (chessMatch.getcurrentPlayer() == Color.WHITE) ? "pretas" : "brancas";
+			System.out.println("CHECKMATE!");
+			System.out.println("Vitória das peças " + color);
+		}
+		
 	}
 	public static void printBoard(ChessPiece[][] pieces)
 	{
