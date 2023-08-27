@@ -27,19 +27,19 @@ public class Horse extends ChessPiece{
 		boolean[][] mat = new boolean[getBoard().getRows()][getBoard().getColumns()];
 		
 		Position p = new Position(0, 0);
-		//Cima-esquerda
+		//Esquerda-cima
 		p.setValues(position.getRow() - 1, position.getColumn() - 2);
 		if(getBoard().positionExists(p) && canMove(p))
 		{
 			mat[p.getRow()][p.getColumn()] = true;
 		}
-		//Esquerda-cima
+		//Cima-esquerda
 		p.setValues(position.getRow() - 2, position.getColumn() - 1);
 		if(getBoard().positionExists(p) && canMove(p))
 		{
 			mat[p.getRow()][p.getColumn()] = true;
 		}
-		//Esquerda-baixo
+		//Cima-direita
 		p.setValues(position.getRow() - 2, position.getColumn() + 1);
 		if(getBoard().positionExists(p) && canMove(p))
 		{
@@ -69,7 +69,7 @@ public class Horse extends ChessPiece{
 		{
 			mat[p.getRow()][p.getColumn()] = true;
 		}
-		//Cima-direita
+		//Esquerda-baixo
 		p.setValues(position.getRow() + 1, position.getColumn() - 2);
 		if(getBoard().positionExists(p) && canMove(p))
 		{

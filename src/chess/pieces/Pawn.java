@@ -61,7 +61,7 @@ public class Pawn extends ChessPiece{
 			}
 			//movimento inicial
 			actualPos.setValues(position.getRow() + 2, position.getColumn());
-			Position pos2 = new Position(position.getRow() - 1, position.getColumn());
+			Position pos2 = new Position(position.getRow() + 1, position.getColumn());
 			if(getBoard().positionExists(actualPos) && !getBoard().thereIsAPiece(actualPos) && getBoard().positionExists(pos2) && !getBoard().thereIsAPiece(pos2) &&getMoveCount() == 0)
 			{
 				mat[actualPos.getRow()][actualPos.getColumn()] = true;
