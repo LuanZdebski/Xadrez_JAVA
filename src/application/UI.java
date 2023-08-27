@@ -58,18 +58,38 @@ public class UI {
 			System.out.print((8 - i) + " ");
 			for(int j=0; j<pieces.length; j++)
 			{
-				printPiece(pieces[i][j]);
+				printPiece(pieces[i][j], false);
 			}
 			System.out.println();
 		}
 		System.out.println("  a b c d e f g h");
 	}
-	public static void printPiece(ChessPiece piece)
+	//sobrecarga que gera posições coloridas de movimento
+	public static void printBoard(ChessPiece[][] pieces, boolean[][] possibleMoves)
 	{
+		//assumindo que o tabuleiro medirá 8x8
+		for(int i=0; i<pieces.length; i++)
+		{
+			System.out.print((8 - i) + " ");
+			for(int j=0; j<pieces.length; j++)
+			{
+				printPiece(pieces[i][j], possibleMoves[i][j]);
+			}
+			System.out.println();
+		}
+		System.out.println("  a b c d e f g h");
+	}
+	public static void printPiece(ChessPiece piece, boolean background)
+	{
+		//cor de fundo para possivel movimento
+		if(background)
+		{
+			System.out.print(ANSI_BLUE_BACKGROUND);
+		}
 		//local vazio
 		if(piece == null)
 		{
-			System.out.print("-");
+			System.out.print("-" + ANSI_RESET);
 		}//peça existe
 		else
 		{
