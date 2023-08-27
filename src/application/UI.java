@@ -3,6 +3,7 @@ package application;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import chess.ChessMatch;
 import chess.ChessPiece;
 import chess.ChessPosition;
 import chess.Color;
@@ -50,6 +51,14 @@ public class UI {
 
 	}
 	
+	public static void printMatch(ChessMatch chessMatch)
+	{
+		printBoard(chessMatch.getPieces());
+		System.out.println();
+		System.out.println("Turno : " + chessMatch.getTurn());
+		String color = (chessMatch.getcurrentPlayer() == Color.WHITE) ? "brancas" : "pretas";
+		System.out.println("Vez das peças " + color);
+	}
 	public static void printBoard(ChessPiece[][] pieces)
 	{
 		//assumindo que o tabuleiro medirá 8x8
