@@ -41,6 +41,12 @@ public class Program {
 				{
 					captured.add(capturedPiece);
 				}
+				if(chessMatch.getPromoted() != null)
+				{
+					System.out.print("O peão deve se promover a qual peça? (B - H - T - Q):");
+					String type = sc.nextLine();
+					chessMatch.replacePromotedPiece(type);
+				}
 			} 
 			catch (ChessException e) 
 			{
